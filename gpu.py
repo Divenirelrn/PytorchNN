@@ -29,4 +29,6 @@ torch.cuda.set_device(1,2,3)
 ##############并行计算设置###############
 model = torch.nn.DataParallel(model, device_ids=[1,2,3])
 
+##############GPU与CPU同步###############
+torch.cuda.synchronize()
 

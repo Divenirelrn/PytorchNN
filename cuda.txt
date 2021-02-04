@@ -1,0 +1,21 @@
+runtime cuda与driver cuda
+
+print(torch.version.cuda) #编译時版本
+
+动态链接库
+
+cudatoolkit
+
+conda中使用指定版本的cuda:
+  1.conda内安装
+  2.编写shell脚本指定cuda版本
+
+cudnn是在cuda基础上的一个神经网络加速库
+作用：进一步优化神经网络使用GPU時的效率
+
+
+#加速神经网络的计算（使用非确定性算法）
+torch.backends.cudnn.enabled = True
+torch.backends.cudnn.benchmark = True
+*若每个itereation数据类型与维度变化不大，使用cudnn可以加速；
+但若数据类型与维度变化较大，每次计算cudnn都会自动寻找一遍优化算法，反而会降低效率
